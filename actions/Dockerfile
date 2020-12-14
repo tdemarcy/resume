@@ -2,7 +2,7 @@ FROM debian:latest
 
 RUN apt-get update && \
     apt-get install --yes --no-install-recommends \
-    texlive-xetex && \
+    texlive-xetex \
     texlive-fonts-recommended \
     texlive-fonts-extra \
     fonts-font-awesome && \
