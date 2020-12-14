@@ -1,0 +1,15 @@
+name: Generate PDF file
+on: push
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: TeX to PDF
+        uses: ./actions
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: pdf-file
+          path: resume.pdf
