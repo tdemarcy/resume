@@ -1,8 +1,7 @@
 #!/bin/sh
 
-cd ..
-sed -i "s/gitSHA/$(git log -1 --format='%h')/" resume.tex
-xelatex --halt-on-error resume.tex
-sed -i "s/$(git log -1 --format='%h')/gitSHA/" resume.tex
-rm resume.aux resume.log resume.out
+cd /github/workspace
+sed -i "s/gitSHA/${GITHUB_SHA::7}" resume.tex
+xelatex resume.tex
+sed -i "s/${GITHUB_SHA::7}/gitSHA/" resume.tex
 
