@@ -8,8 +8,8 @@ jobs:
         uses: actions/checkout@v2
       - name: TeX to PDF
         uses: ./actions
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
+      - name: Commit PDF
+        uses: EndBug/add-and-commit@v6
         with:
-          name: pdf-file
-          path: resume.pdf
+          message: 'update PDF from GitHub Actions'
+          add: 'resume.pdf'
